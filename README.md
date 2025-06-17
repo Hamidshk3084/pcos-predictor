@@ -21,23 +21,17 @@ Polycystic Ovary Syndrome (PCOS) is a hormonal disorder affecting many women wor
 
 
 pcos-predictor/
-│
 ├── static/
-│   └── style.css                # Custom CSS for the website
-│
+│ └── style.css # Custom CSS for the website
 ├── templates/
-│   ├── info.html                # Info page (definition, causes, symptoms, risks)
-│   ├── form.html                # User input form
-│   └── result.html              # Prediction results
-│
+│ ├── info.html # Info page (definition, causes, symptoms, risks)
+│ ├── form.html # User input form
+│ └── result.html # Prediction results
 ├── model/
-│   └── rf_model.pkl           # Trained ML model file
-│
-├── app1.py                       # Main Flask app
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation
-
-
+│ └── rf_model.pkl # Trained ML model file
+├── app1.py # Main Flask app
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
 🛠️ Tech Stack
 Frontend: HTML, CSS (Pastel-themed)
