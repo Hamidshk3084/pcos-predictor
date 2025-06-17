@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCOS Prediction</title>
+    <link rel="stylesheet"   href="/static/styles.css" >
+</head>
+<body>
+    <div class="container">
+        <h2>PCOS Risk Prediction</h2>
+        <form action="/predict" method="post">
+            <h3>Raw Inputs</h3>
+            <input type="text" name="Age" placeholder="Age (Years)" required><br>
+            <input type="text" name="Height" placeholder="Height (Cm)" required><br>
+            <input type="text" name="Weight" placeholder="Weight (Kg)" required><br>
+            <input type="text" name="Waist" placeholder="Waist (Inch)" required><br>
+            <input type="text" name="Hip" placeholder="Hip (Inch)" required><br>
+            <input type="text" name="Pulse_rate" placeholder="Pulse Rate (BPM)" required><br>
+            <input type="text" name="Cycle_length" placeholder="Cycle Length (Days)" required><br>
+            <input type="text" name="Cycle_RI" placeholder="Cycle Regular/Irregular (1 for Irregular, 0 for Regular)" required><br>
+            <input type="text" name="Marraige_Status" placeholder="Marriage Status (Years)" required><br>
+            
+            <h3>Yes/No Inputs (1 for Yes, 0 for No)</h3>
+            <input type="text" name="Skin_darkening" placeholder="Skin Darkening" required><br>
+            <input type="text" name="Hair_growth" placeholder="Hair Growth" required><br>
+            <input type="text" name="Weight_gain" placeholder="Weight Gain" required><br>
+            <input type="text" name="Pimples" placeholder="Pimples" required><br>
+            <input type="text" name="Fast_food" placeholder="Fast Food Consumption" required><br>
+            <input type="text" name="Reg_Exercise" placeholder="Regular Exercise" required><br>
+            <input type="text" name="Hair_loss" placeholder="Hair Loss" required><br>
+
+            <button type="submit">Predict PCOS</button>
+        </form>
+
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

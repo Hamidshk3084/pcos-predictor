@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS Prediction</title>
+    <style>
+            body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f4fc;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background: linear-gradient(to bottom, #eeaaaa, #f1e3e3);;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease-in-out;
+    }
+    .nav a:hover {
+        color: #d81b60;
+    }
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px 50px;
+        background: white;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .hero-text {
+        max-width: 50%;
+        animation: slideInLeft 1s ease-in-out;
+    }
+    .hero h1 {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 20px;
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    .cta-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: linear-gradient(to right, #8e24aa, #d81b60);
+        color: white;
+        font-size: 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .hero img {
+        max-width: 45%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .about {
+        padding: 60px;
+        background: #fff;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .about h2 {
+        color: #333;
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+    .about p {
+        font-size: 18px;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+        from { transform: translateX(-50px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    </style>
+</head>
+<body id="top">
+    <div class="header">
+        <h2>PCOS Prediction</h2>
+        <div class="nav">
+            <a href="#top">Home</a>
+            <a href="#about">About Us</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Leading the way in PCOS Prediction</h1>
+            <p>Our AI-based tool provides insights and predictions to help you understand and manage PCOS effectively.</p>
+            <a href="/input" class="cta-btn">Start Prediction</a>
+        </div>
+        <img src="/static/pcos_doc.jpg" alt="Doctor with stethoscope">
+    </div>
+    <div id="about" class="about">
+        <h2>About PCOS and Our Prediction Model</h2>
+        <p>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting many individuals worldwide. It can lead to irregular periods, weight gain, and fertility issues. Our AI-powered prediction model helps assess the risk of PCOS based on user inputs, providing valuable insights for early diagnosis and management.</p>
+        <p>We are a research project developed as part of a college initiative, utilizing Machine Learning (ML) and Artificial Intelligence (AI) models to predict the risk of Polycystic Ovary Syndrome (PCOS) in users. Our goal is to explore the potential of AI in healthcare and raise awareness about PCOS. However, this tool is strictly for research purposes and should not be considered a medical diagnosis. For accurate evaluation and treatment, please consult a qualified healthcare professional.</p>
+    </div>
+</body>
+</html>

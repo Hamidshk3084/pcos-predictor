@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS Prediction Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(to bottom, #f8f4fc, #e8dff7); 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container { 
+            width: 90%; 
+            max-width: 700px; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #8e24aa;
+            font-size: 32px;
+        }
+        .result {
+            font-size: 26px;
+            font-weight: bold;
+            color: #d81b60;
+            margin-bottom: 20px;
+        }
+        .advice {
+            background: #f3c6c6;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            padding: 12px 20px;
+            background: linear-gradient(to right, #8e24aa, #d81b60);
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: linear-gradient(to right, #7a1e94, #b7164a);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PCOS Risk Prediction</h2>
+        <p class="result">{{ prediction_text }}</p>  
+
+        <!-- Doughnut Chart for Risk Percentage -->
+        <div class="chart-container">
+            <canvas id="riskChart"></canvas>
+        </div>
+
+        <!-- Advice Section -->
+        <div class="advice">
+            <p><strong>Health Advice:</strong> Maintain a healthy lifestyle and consult a doctor if necessary.</p>
+        </div>
+
+        <div class="btn-container">
+            <a href="/input" class="btn">Try Again</a>
+            <a href="/" class="btn">Home</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Chart.js -->
+    <script>
+        var riskPercentage = parseFloat("{{ risk_percentage }}");
+        var remainingPercentage = 100 - riskPercentage;
+    
+        var ctx = document.getElementById('riskChart').getContext('2d');
+        var riskChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['PCOS Risk', 'No Risk'],
+                datasets: [{
+                    data: [riskPercentage, remainingPercentage],
+                    backgroundColor: ['#d81b60', '#ccc'],
+                    hoverBackgroundColor: ['#b7164a', '#aaa']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
